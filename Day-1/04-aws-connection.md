@@ -6,6 +6,43 @@ To configure AWS credentials and set up Terraform to work with AWS, you'll need 
 
 Make sure you have the AWS CLI installed on your machine. You can download and install it from the [AWS CLI download page](https://aws.amazon.com/cli/).
 
+Installing AWS CLI Using snap (easy process)
+Install snap
+If you don't already have snap installed, you can install it by using the instructions Canonical Snapcraft provides. Run snap version to see if your version of Linux already includes snap.
+
+Install Snapcraft on your platform. For information on installing Snapcraft, see Installing the daemon in the Snap documentation.
+
+Restart your system so that your PATH variables are updated correctly. If you are having installation issues, follow steps in Fix common issues in the Snap documentation.
+
+To verify that snap is installed correctly, run the following command.
+
+
+$ snap version
+Install and update the AWS CLI version 1 using snap
+Run the following snap install command for the AWS CLI version 1.
+
+
+$ snap install aws-cli --channel=v1/stable --classic
+Depending on your permissions, you may need to add sudo to your command.
+
+
+$ sudo snap install aws-cli --channel=v1/stable --classic
+Verify that the AWS CLI installed correctly.
+
+
+$ aws --version
+aws-cli/1.35.20 Python/3.11.6 Linux/5.10.205-195.807.amzn2.x86_64 botocore/1.18.6
+If you get an error, see Troubleshooting errors for the AWS CLI.
+
+Uninstall the AWS CLI using snap
+If you installed the AWS CLI version 1 using snap, you must also uninstall using snap.
+
+
+$ snap remove aws-cli
+You might need to restart your command prompt window or your computer to remove all files.
+
+(Optional) Remove the shared AWS SDK and AWS CLI settings information in the .aws folder.
+
 2. **Create an AWS IAM User**:
 
 To interact with AWS programmatically, you should create an IAM (Identity and Access Management) user with appropriate permissions. Here's how to create one:
